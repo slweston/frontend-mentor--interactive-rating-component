@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Fraunces', serif;
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+:root {
+	--clr-orange: hsl(25, 97%, 53%);
+	--clr-light-gray: hsl(220, 7%, 49%);
+	--clr-med-gray: hsl(205, 12%, 20%);
+	--clr-dark-blue: hsl(215, 20%, 16%);
+	--clr-very-dark-blue: hsl(228, 11%, 9%);
+}
+
+$mediaMinWidth_desktop: 768px;
+
+body {
+	font-family: 'Overpass', sans-serif;
+	background: var(--clr-very-dark-blue);
+	height: 100vh;
+	display: grid;
+	align-content: center;
+}
+
+.container {
+	width: 100%;
+	min-width: 250px;
+	max-width: 375px;
+	margin-inline: auto;
+}
+
+.card {
+	position: relative;
+	display: grid;
+	gap: 1em;
+	border-radius: 1em;
+	overflow: hidden;
+	max-width: 250px;
+	margin: 0.5rem auto;
+	padding: 1em;
+	background: var(--clr-dark-blue);
+	color: #fff;
+
+	&--thank-you-state {
+		text-align: center;
+		display: none;
+
+		img {
+			margin-inline: auto;
+			width: 125px;
+		}
+	}
+
+
+	p {
+		font-size: 0.8rem;
+		color: var(--clr-light-gray);
+	}
+
+	form {
+		display: grid;
+		gap: 1em;
+	}
+
+	&__heading {
+		font-size: 1.25rem;
+		font-weight: bold;
+	}
+
+	&__ratings {
+		display: flex;
+		justify-content: space-evenly;
+		gap: 1em;
+
+		input {
+			display: none;
+		}
+
+		input:checked+.card__rating {
+			background: var(--clr-light-gray);
+			color: #fff;
+		}
+	}
+
+	&__star,
+	&__rating {
+		padding: 0.6rem;
+		display: flex;
+		justify-content: center;
+		height: 1.75rem;
+		width: 1.75rem;
+		border-radius: 50%;
+		background: var(--clr-med-gray);
+		color: var(--clr-light-gray);
+	}
+
+	&__rating {
+		display: flex;
+		font-size: 0.6rem;
+
+		&:hover {
+			cursor: pointer;
+			background: var(--clr-orange);
+			color: #fff;
+		}
+
+	}
+
+	&__submit-button {
+		border: none;
+		border-radius: 1em;
+		padding: 0.5em 3em;
+		background: var(--clr-orange);
+		color: var(--clr-white);
+
+		&:hover {
+			cursor: pointer;
+			background: #fff;
+			color: var(--clr-orange);
+		}
+	}
+
+	&__rating-you-selected {
+		font-size: 0.8rem;
+		border-radius: 3em;
+		padding: 0.5em 1em 0.25em;
+		margin-inline: auto;
+		background: var(--clr-med-gray);
+		color: var(--clr-orange);
+	}
+}
+
+footer {
+	font-size: 0.6rem;
+	text-align: center;
+	background: #fff;
+	padding: 1em;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	a {
+		color: blue;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
