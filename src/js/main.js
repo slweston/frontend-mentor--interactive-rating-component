@@ -9,7 +9,7 @@
 		const ratingCard = document.querySelector('.card--rating-state');
 		const thankYouCard = document.querySelector('.card--thank-you-state');
 
-		ratingCard.style.display = 'none';
 		thankYouCard.style.display = 'grid';
+		ratingCard.style.display = 'none';
 	});
 })();
